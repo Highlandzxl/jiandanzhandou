@@ -10,8 +10,8 @@
   </script>
 </head>
 <body>
- <h1>这是一款由python编写的回合制战斗小游戏</h1>
-<a href="https://github.com/Highlandzxl/jiandanzhandou"><p>Github Page</p></a>有任何问题请发Issues反馈
+ <h1 class="main">这是一款由python编写的回合制战斗小游戏</h1>
+  <a href="https://github.com/Highlandzxl/jiandanzhandou">github page</a>
  <p>我们有如下优点</p>
  <ul>
    <li><del>全在脑子里想象所以</del>非常高的帧率</li>
@@ -35,17 +35,33 @@ function egg() {
   }
 }
  </script>
- <input type="button" onclick="egg()" value="彩蛋" />
+ <div class="main">
+   <a href="https://zhouxule.lanzoue.com/iIPVl20lz1hc"><button class="anniu">下载</button></a><br>
+ <input type="button" onclick="egg()" value="彩蛋" class="anniu" />
+ </div>
+ <div>
+   <h3 class="else">其他DLC</h3>
+   <ul>
+     <li>
+       <p>被憎恶的守护骑士</p>
+       <a href="https://zhouxule.lanzoue.com/iuRV920lz1gb"><button class="anniu">下载</button></a>
+     </li>
+     <li>
+       <p>彼岸的行吟诗人</p>
+       <i>＊敬请期待</i>
+     </li>
+   </ul>
+ </div>
  <script>
    //恭喜你发现了真正的彩蛋！
    function 乌拉拉(){
-     alert("我就是世界上另一个爱恋城华！")
+     alert("无良老板周扒皮周末强迫员工加班，其背后真相令人发指！")
    }
    function wulala(){
      alert("对不起我伤害过你，愿你日后被世界温柔以待")
    }
    function 爱恋城华(){
-     alert("遍体鳞伤，还笑着原谅")
+     alert("你也不必牵强再说爱我，反正我的灵魂已片片凋落")
    }
    function 舰长(){
      alert("槐花又飘落，回忆在心头落锁，写千万寂寞，哭那些求而不得")
@@ -54,5 +70,17 @@ function egg() {
      alert("转啊转啊转啊转啊转，没能转进你的心上")
    }
  </script>
+ <style>
+   .main{
+     text-align: center;
+   }
+   .anniu{
+     background-color: black;
+     color: white;
+   }
+   .else{
+     text-align: center;
+   }
+ </style>
 </body>
 </html>

@@ -2,23 +2,23 @@ import random as r
 
 hp=114514
 hpe=114514
-bs=0
+bh=0
 power=0
 step=3
 
 #角色名称
-name="惨绝戏子·悲剧演员"
+name="被憎恶的守护骑士"
 enemy="『代行者』"
 
 #技能名称
-c1="拉开帷幕的凶剧"
-c2="悲剧主旋律"
-c3="响彻剧场的恸哭"
+c1="痛苦恩赐"
+c2="以『守护骑士』之名"
+c3="保护的决心"
 
 #技能台词
-c1t="悲剧的开场往往是喜剧"
-c2t="就让你感受一下，被人厌恶的痛楚吧"
-c3t="聆听这，被憎恶之人的恸哭吧"
+c1t="我将这痛苦赐予你"
+c2t="堵上守护骑士的名号，我绝不退缩！"
+c3t="就算被人厌恶，也不会改变我作为守护骑士的决心！"
 
 #基础行动
 def 攻击(w):
@@ -29,9 +29,9 @@ def 受击(y):
   hp=hp-y
   
 #进阶行动
-def 悲伤(x):
-  global bs
-  bs=bs+x
+def 守护之心(x):
+  global bh
+  bh=bh+x
 def 终极技能(w):
   global power
   if power==3:
@@ -39,7 +39,6 @@ def 终极技能(w):
     print(c3t)
     ls=1234*w
     hpe=hpe-ls
-    bs=0
     power=0
     print("造成了",ls,"点巨量伤害")
     main()
@@ -65,7 +64,8 @@ def 对手():
   ls=r.randint(0,59)
   a=r.randint(ls,150)
   受击(a)
-  print("对手对你造成了",a,"点伤害")
+  print("对手对你造成了",a,"点伤害，叠加了一层守护之心")
+  守护之心(1)
 
 #主界面
 def main():
@@ -74,7 +74,7 @@ def main():
   print()
   print(name,"剩余生命值",hp)
   print(enemy,"剩余生命值",hpe)
-  print("“悲剧”层数",bs)
+  print("“守护之心”层数",bh)
   print("充能(满3可释放终极技能)",power)
   print("剩余行动点数",step)
   print()
@@ -108,11 +108,10 @@ def 战斗():
       print(c2t)
       print()
       攻击(a*10)
-      悲伤(1)
-      print("造成了",a*10,"点伤害，叠加了一层悲伤")
+      print("造成了",a*10,"点伤害")
       充能(choice)
       main()
   else:
-    终极技能(bs)
+    终极技能(bh)
 
 main()
